@@ -1,0 +1,56 @@
+.container-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+header {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.grid {
+  border-color: black;
+  border-style: solid;
+  height: 960px;
+  width: 960px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cell-column {
+  /*border-color: black;
+  border-style: solid;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.sub-cell {
+  flex: 1;
+  /*border-color: black;
+  border-style: solid;*/
+}
+
+.sub-cell:hover {
+  background-color: rgb(0, 247, 255);
+}
+
+.sub-cell:active {
+  background-color: red;
+}
+
+.slider-container {
+  width: 25%;
+}
+
+#slider-input {
+  width: 24px;
+}
+
+#slider {
+  width: 100%;
+}
