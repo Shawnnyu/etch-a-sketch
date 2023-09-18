@@ -14,33 +14,9 @@ header {
 .grid {
   border-color: black;
   border-style: solid;
-  height: 960px;
-  width: 960px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.cell-column {
-  /*border-color: black;
-  border-style: solid;*/
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-}
-
-.sub-cell {
-  flex: 1;
-  /*border-color: black;
-  border-style: solid;*/
-}
-
-.sub-cell:hover {
-  background-color: rgb(0, 247, 255);
-}
-
-.sub-cell:active {
-  background-color: red;
+  height: 500px;
+  width: 500px;
+  display: grid;
 }
 
 .slider-container {

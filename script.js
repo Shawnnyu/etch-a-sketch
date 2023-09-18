@@ -13,20 +13,12 @@ let canDraw = false;
 /*****Grid section*****/
 
 function loadGrid(dimension) {
-  for (let i = 0; i < dimension; i++) {
+  mainGrid.style.gridTemplateColumns = `repeat(${dimension}, 1fr)`;
+  mainGrid.style.gridTemplateRows = `repeat(${dimension}, 1fr)`;
+  for (let i = 0; i < dimension ** 2; i++) {
     let cell = document.createElement("div");
-    cell.className = "cell-column";
-    loadSubGrid(dimension, cell);
+    cell.addEventListener("mouseover", paint);
     mainGrid.appendChild(cell);
-  }
-}
-
-function loadSubGrid(dimension, cell) {
-  for (let i = 0; i < dimension; i++) {
-    let subCell = document.createElement("div");
-    subCell.className = "sub-cell";
-    subCell.addEventListener("mouseover", paint);
-    cell.appendChild(subCell);
   }
 }
 
@@ -39,7 +31,7 @@ function endSketch() {
   canDraw = false;
 }
 
-function paint() {
+function paint(e) {
   if (canDraw) {
     this.style.backgroundColor = "red";
   }
@@ -64,6 +56,7 @@ slider.addEventListener("input", sliderChange);
 /*****Misc*****/
 function resetGrid() {
   console.log(`slider value: ${slider.value}`);
+  endSketch();
   removeAllChildNodes(mainGrid);
   loadGrid(slider.value);
 }
